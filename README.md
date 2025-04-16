@@ -2,7 +2,7 @@
 
 This repository contains an automated login test for SauceDemo website (https://www.saucedemo.com/).
 
-**NOTE** This repository is created solely for demonstration and testing purposes. All credentials and user data used in this project are publicly available and are intended only for test purposes. No sensitive or proprietary information is included.  
+**NOTE:** This repository is created solely for demonstration and testing purposes. All credentials and user data used in this project are publicly available and are intended only for test purposes. No sensitive or proprietary information is included.  
 
 ## Features
 - **Automated Login Process:** Tests for various user roles and scenarios as provided on the website.
