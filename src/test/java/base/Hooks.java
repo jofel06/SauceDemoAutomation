@@ -10,7 +10,7 @@ import utils.ConfigReader;
 import io.cucumber.java.Scenario;
 
 public class Hooks {
-    public static WebDriver driver;
+    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     @Before
     public void setupWebDriver(Scenario scenario) { // Added Scenario argument
@@ -18,25 +18,30 @@ public class Hooks {
         switch (browserName.toLowerCase()) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                driver.set(new ChromeDriver());
                 break;
             case "edge":
                 WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
+                driver.set(new EdgeDriver());
                 break;
             default:
                 throw new IllegalArgumentException("Unsupported browser: " + browserName);
         }
-        driver.get(ConfigReader.getUrl());
-        driver.manage().window().maximize();
+        getDriver().get(ConfigReader.getUrl());
+        getDriver().manage().window().maximize();
         System.out.println("Starting scenario: " + scenario.getName());
     }
 
     @After
     public void quitWebDriver(Scenario scenario) { // Added Scenario argument
-        if (driver != null) {
-            driver.quit();
+        if (getDriver() != null) {
+            getDriver().quit();
+            driver.remove(); //this wil cleanup Thread Local
         }
         System.out.println("Ending scenario: " + scenario.getName());
+    }
+
+    public static WebDriver getDriver() {
+        return driver.get();
     }
 }

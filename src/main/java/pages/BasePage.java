@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class BasePage {
     protected WebDriver driver;
-    private final WebDriverWait wait;
+    protected final WebDriverWait wait;
 
     public BasePage(WebDriver driver){
         this.driver = driver;
@@ -29,6 +29,11 @@ public class BasePage {
         waitForElement(element);
         element.clear();
         element.sendKeys(text);
+    }
+
+    protected String getText(WebElement element){
+        waitForElement(element);
+        return element.getText();
     }
 
 }
