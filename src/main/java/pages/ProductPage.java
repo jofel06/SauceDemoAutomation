@@ -15,7 +15,7 @@ public class ProductPage extends BasePage{
         PageFactory.initElements(driver, this);
     }
 
-    public String isAppLogoDisplayed(){
+    public String getAppLogoText(){
         if(productsPageAppLogo.isDisplayed()){
             return getText(productsPageAppLogo);
         }

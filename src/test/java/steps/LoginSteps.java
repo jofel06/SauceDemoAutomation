@@ -1,12 +1,10 @@
 package steps;
 
 import base.Hooks;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import models.LoginDataModel;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.LoginPage;
@@ -49,12 +47,17 @@ public class LoginSteps {
 
     @Then("User should be logged in normally")
     public void userShouldBeLoggedInNormally(){
-        Assert.assertEquals(productPage.isAppLogoDisplayed(), "Swag Labs", "User is not logged in successfully");
+        Assert.assertEquals(productPage.getAppLogoText(), "Swag Labs", "User is not logged in successfully");
     }
 
     @Then("User should see the error message {string}")
-    public void iShouldSeeTheErrorMessage(String expectedMessage) {
+    public void userShouldSeeAnErrorMessage(String expectedMessage) {
         String actualErrorMessage = loginPage.getLoginErrorText();
-        Assert.assertEquals(actualErrorMessage, "Epic sadface: Sorry, this user has been locked out.");
+        Assert.assertEquals(actualErrorMessage, expectedMessage);
+    }
+
+    @Then("User should be logged in successfully")
+    public void userShouldBeLoggedInSuccessfully() {
+        Assert.assertEquals(productPage.getAppLogoText(), "Swag Labs", "User is not logged in successfully");
     }
 }
