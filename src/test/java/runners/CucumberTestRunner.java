@@ -7,12 +7,9 @@ import org.testng.annotations.Test;
 
 @Test
 @CucumberOptions(
-        features = "src/test/resources/features", // Path to your feature files
-        glue = "steps", // Package containing your step definitions
-        plugin = {
-                "pretty",
-                "html:target/cucumber-reports/cucumber-html-report.html",
-                "json:target/cucumber-reports/cucumber-json-report.json"},
+        features = "src/test/resources/features",
+        glue = { "steps", "base" }, // Package containing the step definitions and hooks
+        plugin = {"pretty"},
         monochrome = true) // Clean console output (no weird symbols or colors).
 
 public class CucumberTestRunner extends AbstractTestNGCucumberTests{

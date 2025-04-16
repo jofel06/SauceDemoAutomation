@@ -7,17 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import utils.ConfigReader;
+import io.cucumber.java.Scenario;
 
 public class Hooks {
-
-    private WebDriver driver;
-
-    public WebDriver getDriver() {
-        return driver;
-    }
+    public static WebDriver driver;
 
     @Before
-    public void setupWebDriver() {
+    public void setupWebDriver(Scenario scenario) { // Added Scenario argument
         String browserName = ConfigReader.getBrowser();
         switch (browserName.toLowerCase()) {
             case "chrome":
@@ -32,12 +28,15 @@ public class Hooks {
                 throw new IllegalArgumentException("Unsupported browser: " + browserName);
         }
         driver.get(ConfigReader.getUrl());
+        driver.manage().window().maximize();
+        System.out.println("Starting scenario: " + scenario.getName());
     }
 
     @After
-    public void quitWebDriver() {
+    public void quitWebDriver(Scenario scenario) { // Added Scenario argument
         if (driver != null) {
             driver.quit();
         }
+        System.out.println("Ending scenario: " + scenario.getName());
     }
 }

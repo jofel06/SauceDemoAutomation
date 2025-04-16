@@ -16,11 +16,9 @@ public class LoginSteps {
 
     private WebDriver driver;
     private LoginPage loginPage;
-    private Hooks hooks;
 
-    public LoginSteps(Hooks hooks) {
-        this.hooks = hooks;
-        this.driver = hooks.getDriver();
+    public LoginSteps() {
+        this.driver = Hooks.driver;
         this.loginPage = new LoginPage(driver);
     }
 
