@@ -1,8 +1,16 @@
 Feature: Login
+
   As a user, I want to log in to the Saucedemo website
 
-  Scenario: Successful login with standard user
-    Given I am on the Saucedemo login page
-    When I enter the username and password
-    And I click the login button
-    Then I should be logged in normally
+  @regression @standard
+  Scenario: Login with standard_user
+    Given User is on the Saucedemo login page
+    When User logs in as "standard_user"
+    Then User should be logged in normally
+
+  @regression @locked
+  Scenario: Login with locked_out_user
+    Given User is on the Saucedemo login page
+    When User logs in as "locked_out_user"
+    Then User should see the error message "Epic sadface: Sorry, this user has been locked out."
+

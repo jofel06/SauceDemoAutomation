@@ -13,6 +13,8 @@ public class LoginPage extends BasePage {
     private WebElement passwordField;
     @FindBy(id = "login-button")
     private WebElement loginButton;
+    @FindBy(xpath = "//h3[@data-test='error']")
+    private WebElement loginErrorText;
 
     public LoginPage(WebDriver driver){
         super(driver);
@@ -31,5 +33,13 @@ public class LoginPage extends BasePage {
         click(loginButton);
     }
 
+    public String getLoginErrorText(){
+        if (loginErrorText.isDisplayed()){
+            return getText(loginErrorText);
+        }
+        else {
+            throw new AssertionError("Login error message is not displayed.");
+        }
 
+    }
 }
