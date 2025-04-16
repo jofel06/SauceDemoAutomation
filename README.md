@@ -50,7 +50,10 @@ This repository contains an automated login test for SauceDemo website (https://
   - **To run tests in Edge**:
     ```bash
     - mvn test -Dbrowser=edge
-  - Running the test using **(mvn test)** will run the test by using Chrome browser only (default)
+  - **You can also run the test using**
+     ```bash
+     - mvn test
+   - running the test using this will run it by default browser(chrome)
 
 
 ## Test Scenarios (Gherkin)
