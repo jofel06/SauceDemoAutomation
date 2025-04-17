@@ -2,7 +2,6 @@ package utils;
 
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.ObjectMapper;
 import models.LoginDataModel;
-import org.apache.commons.digester3.annotations.rules.SetTop;
 
 import java.io.File;
 import java.io.IOException;
