@@ -109,9 +109,25 @@ Feature: Login
     - Test results (passed, failed, etc.)
     - Test execution time
     - Steps involved in each test
-- **To generate and view the report after a test run, execute:**
-    ```bash
-    - allure serve target/allure-results
+     
+### Generate and View the Report
+
+**Option 1: Quick Temporary Report**
+
+Use this for a quick preview after a test run:
+```bash
+allure serve target/allure-results
+```
+**Option 2: Permanent Report**
+
+Use this to generate a static, shareable HTML report:
+  ```bash
+  - allure generate target/allure-results -o target/allure-report --clean
+   ```
+Then view the report using:
+ ```bash
+  - allure open target/allure-report
+   ```
 
 ## Configuration
 - The config.properties file in the src/test/resources/ directory allows you to configure the application URL.
