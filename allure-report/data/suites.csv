@@ -1,7 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"  As a user, I want to log in to the Saucedemo website","11136","Login with performance_glitch_user","","Thu Apr 17 12:27:59 PST 2025","passed","Thu Apr 17 12:28:11 PST 2025","","Login","Login with performance_glitch_user",""
-"  As a user, I want to log in to the Saucedemo website","6316","Login with standard_user","","Thu Apr 17 12:27:59 PST 2025","passed","Thu Apr 17 12:28:06 PST 2025","","Login","Login with standard_user",""
-"  As a user, I want to log in to the Saucedemo website","6658","Login with visual_user","","Thu Apr 17 12:27:59 PST 2025","passed","Thu Apr 17 12:28:06 PST 2025","","Login","Login with visual_user",""
-"  As a user, I want to log in to the Saucedemo website","6365","Login with problem_user","","Thu Apr 17 12:27:59 PST 2025","passed","Thu Apr 17 12:28:06 PST 2025","","Login","Login with problem_user",""
-"  As a user, I want to log in to the Saucedemo website","6393","Login with locked_out_user","","Thu Apr 17 12:27:59 PST 2025","passed","Thu Apr 17 12:28:06 PST 2025","","Login","Login with locked_out_user",""
-"  As a user, I want to log in to the Saucedemo website","6305","Login with error_user","","Thu Apr 17 12:27:59 PST 2025","passed","Thu Apr 17 12:28:06 PST 2025","","Login","Login with error_user",""

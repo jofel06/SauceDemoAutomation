@@ -1,7 +1,0 @@
-"BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
-"0","","0","Login","1","0","Login with performance_glitch_user","0"
-"0","","0","Login","1","0","Login with standard_user","0"
-"0","","0","Login","1","0","Login with visual_user","0"
-"0","","0","Login","1","0","Login with problem_user","0"
-"0","","0","Login","1","0","Login with locked_out_user","0"
-"0","","0","Login","1","0","Login with error_user","0"
