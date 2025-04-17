@@ -97,6 +97,8 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/testng_suites/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <parallel>methods</parallel>
+                    <threadCount>2</threadCount>
                 </configuration>
             </plugin>
         </plugins>
