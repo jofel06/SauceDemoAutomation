@@ -11,7 +11,7 @@ This repository contains an automated login test for SauceDemo website (https://
 - **Test Execution:** Managed with TestNG, including parallel testing.
 - **Page Object Model (POM):** Clean separation of test logic and page interactions.
 - **Dynamic Browser Support:** Configurable for Chrome and Edge using Maven parameters.
-- **Allure Reporting:** Generates detailed test reports with environment details.
+- **Allure Reporting:** Generates detailed test reports
 - **Configuration Management:** Using `config.properties` and Maven parameters.
 - **Version Control:** Managed using Git.
 
@@ -44,16 +44,19 @@ This repository contains an automated login test for SauceDemo website (https://
 ## How to Run the Tests
 
 **You can run the tests using Maven commands. The project supports dynamic browser configuration.**
-  - **To run tests in Chrome (default):**
+  - **To run tests in Chrome:**
     ```bash
-    - mvn test -Dbrowser=chrome
+    - mvn test "-Dsurefire.suiteXmlFiles=src/test/resources/testng_suites/chrome-testng.xml" 
   - **To run tests in Edge**:
     ```bash
-    - mvn test -Dbrowser=edge
-  - **You can also run the test using**
+    - mvn test "-Dsurefire.suiteXmlFiles=src/test/resources/testng_suites/edge-testng.xml" 
+  - **To run test in Parallel, both Edge and Chrome**
      ```bash
      - mvn test
-   - running the test using this will run it by default browser(chrome)
+     ```
+    or
+     ```bash
+     - mvn test "-Dsurefire.suiteXmlFiles=src/test/resources/testng_suites/testng.xml"
 
 
 ## Test Scenarios (Gherkin)
@@ -106,13 +109,9 @@ Feature: Login
     - Test results (passed, failed, etc.)
     - Test execution time
     - Steps involved in each test
-    - Environment information
 - **To generate and view the report after a test run, execute:**
     ```bash
     - allure serve target/allure-results
- 
-- **The environment details** for Allure reporting are generated automatically via the EnvironmentSetup class, which runs before the test suite. **No additional steps are required.**
-
 
 ## Configuration
 - The config.properties file in the src/test/resources/ directory allows you to configure the application URL.
