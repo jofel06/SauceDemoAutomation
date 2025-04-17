@@ -119,6 +119,9 @@ Feature: Login
     ```ini
     - base.url=https://www.saucedemo.com/
     - browser=chrome
+
+## References
+- All references used to create this automation test framework are stored at **references.md** in the root path. 
  
 
 ## Disclaimer
