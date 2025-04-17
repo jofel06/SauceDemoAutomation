@@ -29,6 +29,16 @@ This repository contains an automated login test for SauceDemo website (https://
 - **Google Chrome** and/or **Microsoft Edge** (depending on which browser(s) you wish to test)
 - A compatible IDE (e.g., IntelliJ IDEA, Eclipse) is recommended for editing the code.
 
+### Excel Test Report
+- **File Name**: `Login Data test report.xlsx`
+- **Location**: TestReport directory in the Root path
+- **Description**: This Excel file contains detailed test results for the login functionality. It includes information such as:
+    - Test name
+    - Status (Pass/Fail)
+    - Duration
+    - Start and Stop times
+    - And other relevant details
+
 ## Installation and Setup
 1. **Clone this repository**:
    ```bash
